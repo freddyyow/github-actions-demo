@@ -1,17 +1,20 @@
 terraform {
+  required_version = ">= 1.11.2"
+  
   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.18.0"
     }
+  
   }
 
   backend "s3" {
     bucket         	   = "craig-refactor-tfstate"
-    key              	   = "state/terraform-testing.tfstate"
+    key              	   = "state/terraform-github-actions.tfstate"
     region         	   = "us-west-2"
     encrypt        	   = true
-    use_lockfile = true
+    #use_lockfile = true
   }
 }
 
