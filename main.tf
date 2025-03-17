@@ -15,6 +15,10 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-west-2"
+}
+
 locals {
   all_cidrs = concat(var.eks_cidr_block, var.private_cidr_block)
 }
